@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import "../components/totalValueChart/TotalValueChartDesign.css";
-import SharesGrid from "../components/sharsGrid/SharesGrid";
+import SharesGrid from "../components/sharesGrid/SharesGrid";
 import TotalValueChart from "../components/totalValueChart/TotalValueChart";
 import CurrentValuePortfolioChart from "../components/CurrentValuePortfolioChart";
 import TotalValue from "../components/TotalValue";
