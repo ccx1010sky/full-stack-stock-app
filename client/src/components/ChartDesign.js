@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
+import React from "react";
 import HighStock from "highcharts/highstock";
 import HighchartsReact from "highcharts-react-official";
-import chartData from "./totalValueChart/ChartData";
 import "./totalValueChart/TotalValueChartDesign.css"
 
 
@@ -18,8 +16,6 @@ const arr = []
       shareData[i][4], // close
     ]);
   } 
-
-
 
 let mockOptions = {
   chart: {

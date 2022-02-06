@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import TotalValueChartDesign from './TotalValueChartDesign';
-import { getShares } from '../../SharesService';
 import './TotalValueChartDesign.css'
 const TotalValueChart = () => {
     const [totalShareData, setTotalShareData] = useState([])
@@ -24,7 +23,7 @@ const TotalValueChart = () => {
 
         const sharesApiURL = `http://localhost:5000/api/sharesData/find/${symbol}`
         return fetch(sharesApiURL)
-        .then(respose => respose.json())
+        .then(res => res.json())
         .then((data) => 
             convertDataForChart(data["data"]), setLoading(false))
         .catch(err=>console.log(err))  
