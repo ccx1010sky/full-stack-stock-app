@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import TotalValueChartDesign from './TotalValueChartDesign';
 import './TotalValueChartDesign.css'
+
+
 const TotalValueChart = () => {
     const [totalShareData, setTotalShareData] = useState([])
     const [loading, setLoading] = useState(true)
