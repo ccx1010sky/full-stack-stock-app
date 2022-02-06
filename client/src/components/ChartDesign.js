@@ -8,7 +8,17 @@ import "./totalValueChart/TotalValueChartDesign.css"
 
 const ChartDesign = ({selectedShare, shareData}) => {
 
-const mockData = shareData
+const arr = []
+  for (var i = 0; i < shareData.length; i++) {
+    arr.push([
+      shareData[i][0], // the date
+      shareData[i][1], // open
+      shareData[i][2], // high
+      shareData[i][3], // low
+      shareData[i][4], // close
+    ]);
+  } 
+
 
 
 let mockOptions = {
@@ -89,33 +99,12 @@ let mockOptions = {
     {
       type: "candlestick",
       data: (function() {
-        var ohlcData = [];
-
-        for (var i = 0; i < mockData.length; i++) {
-          ohlcData.push([
-            mockData[i][0], // the date
-            mockData[i][1], // open
-            mockData[i][2], // high
-            mockData[i][3], // low
-            mockData[i][4] // close
-          ]);
-        }
-        return ohlcData;
+        
       })()
     },
     {
       type: "column",
-      data: (function() {
-        var columnData = [];
-
-        for (var i = 0; i < mockData.length; i++) {
-          columnData.push([
-            mockData[i][0], // the date
-            mockData[i][5] // the volume
-          ]);
-        }
-        return columnData;
-      })(),
+      data: arr,
       yAxis: 1
     }
   ]
@@ -127,10 +116,7 @@ let mockOptions = {
 
     <div>
       {
-        <HighchartsReact
-          highcharts={HighStock}
-          constructorType={"stockChart"}
-          options={mockOptions}
+        <HighchartsReact highcharts={HighStock} constructorType={"stockChart"} options={mockOptions}
         />
       }
     </div>

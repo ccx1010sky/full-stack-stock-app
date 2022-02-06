@@ -1,10 +1,10 @@
 import React from "react";
-import '../App.css';
+import "../App.css";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import ShareDetails from "./ShareDetails";
 import TotalValueChart from "./totalValueChart/TotalValueChart";
-import "./totalValueChart/TotalValueChartDesign.css"
+import "./totalValueChart/TotalValueChartDesign.css";
 
 const CurrentValuePortfolioChart = ({ shares }) => {
   const shareName = shares.map((s) => s.name);
@@ -23,16 +23,14 @@ const CurrentValuePortfolioChart = ({ shares }) => {
     arr.push({ name: shareName[i], y: percent[i] });
   }
 
-
   //options object
   const options = {
     chart: {
       type: "pie",
-      styledMode: true
+      styledMode: true,
     },
     title: {
       text: "Portfolio Allocations",
-
     },
     subtitle: {
       // text: 'Click the columns to view versions. Source: <a href="http://highcharts.com" target="_blank">Highcharts.com</a>',
@@ -75,11 +73,7 @@ const CurrentValuePortfolioChart = ({ shares }) => {
     ],
   };
 
-
-  return (
-    
-      <HighchartsReact highcharts={Highcharts} options={options} />
-  );
+  return <HighchartsReact highcharts={Highcharts} options={options} />;
 };
 
 export default CurrentValuePortfolioChart;
