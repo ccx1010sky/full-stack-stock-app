@@ -1,8 +1,8 @@
 import React from "react";
-import "../App.css";
+// import "../App.css";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import ShareDetails from "./ShareDetails";
+// import ShareDetails from "./shareDetails/ShareDetails";
 import TotalValueChart from "./totalValueChart/TotalValueChart";
 import "./totalValueChart/TotalValueChartDesign.css";
 

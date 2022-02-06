@@ -1,6 +1,6 @@
 import ShareUpdateNumber from './ShareUpdateNumber';
 import { useState } from 'react';
-import '../App.css';
+
 
 const ShareCard = ({share, removeShareFromDB, updateShareNo, getGraph, chartType}) => {
   const [showForm, setShowForm] = useState(false)
