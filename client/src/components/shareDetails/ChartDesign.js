@@ -1,12 +1,9 @@
 import React from "react";
 import HighStock from "highcharts/highstock";
 import HighchartsReact from "highcharts-react-official";
-import "./totalValueChart/TotalValueChartDesign.css"
 
-
-const ChartDesign = ({selectedShare, shareData}) => {
-
-const arr = []
+const ChartDesign = ({ selectedShare, shareData }) => {
+  const arr = [];
   for (var i = 0; i < shareData.length; i++) {
     arr.push([
       shareData[i][0], // the date
@@ -15,108 +12,114 @@ const arr = []
       shareData[i][3], // low
       shareData[i][4], // close
     ]);
-  } 
+  }
 
-let mockOptions = {
-  chart: {
-    styledMode: true
-},
-  rangeSelector: {buttons: [{
-    type: 'month',
-    count: 1,
-    text: '1m',
-    title: 'View 1 month'
-}, {
-    type: 'month',
-    count: 3,
-    text: '3m',
-    title: 'View 3 months'
-}, {
-    type: 'month',
-    count: 6,
-    text: '6m',
-    title: 'View 6 months'
-}, {
-    type: 'ytd',
-    text: 'YTD',
-    title: 'View year to date'
-}, {
-    type: 'year',
-    count: 1,
-    text: '1y',
-    title: 'View 1 year'
-}, {
-    type: 'all',
-    text: 'All',
-    title: 'View all'
-}], 
-    selected: 5
-  },
-
-  title: {
-    text: selectedShare
-  },
-
-  yAxis: [
-    {
-      labels: {
-        align: "right",
-        x: -3
-      },
-      title: {
-        text: "Price"
-      },
-      height: "60%",
-      lineWidth: 2,
-      resize: {
-        enabled: true
-      }
+  let mockOptions = {
+    chart: {
+      styledMode: true,
     },
-    {
-      labels: {
-        align: "right",
-        x: -3
-      },
-      title: {
-        text: "Volume"
-      },
-      top: "65%",
-      height: "35%",
-      offset: 0,
-      lineWidth: 2
-    }
-  ],
-
-  tooltip: {
-    split: true
-  },
-
-  series: [
-    {
-      type: "candlestick",
-      data: (function() {
-        
-      })()
+    rangeSelector: {
+      buttons: [
+        {
+          type: "month",
+          count: 1,
+          text: "1m",
+          title: "View 1 month",
+        },
+        {
+          type: "month",
+          count: 3,
+          text: "3m",
+          title: "View 3 months",
+        },
+        {
+          type: "month",
+          count: 6,
+          text: "6m",
+          title: "View 6 months",
+        },
+        {
+          type: "ytd",
+          text: "YTD",
+          title: "View year to date",
+        },
+        {
+          type: "year",
+          count: 1,
+          text: "1y",
+          title: "View 1 year",
+        },
+        {
+          type: "all",
+          text: "All",
+          title: "View all",
+        },
+      ],
+      selected: 5,
     },
-    {
-      type: "column",
-      data: arr,
-      yAxis: 1
-    }
-  ]
-};
 
+    title: {
+      text: selectedShare,
+    },
 
+    yAxis: [
+      {
+        labels: {
+          align: "right",
+          x: -3,
+        },
+        title: {
+          text: "Price",
+        },
+        height: "60%",
+        lineWidth: 2,
+        resize: {
+          enabled: true,
+        },
+      },
+      {
+        labels: {
+          align: "right",
+          x: -3,
+        },
+        title: {
+          text: "Volume",
+        },
+        top: "65%",
+        height: "35%",
+        offset: 0,
+        lineWidth: 2,
+      },
+    ],
+
+    tooltip: {
+      split: true,
+    },
+
+    series: [
+      {
+        type: "candlestick",
+        data: (function () {})(),
+      },
+      {
+        type: "column",
+        data: arr,
+        yAxis: 1,
+      },
+    ],
+  };
 
   return (
-
     <div>
       {
-        <HighchartsReact highcharts={HighStock} constructorType={"stockChart"} options={mockOptions}
+        <HighchartsReact
+          highcharts={HighStock}
+          constructorType={"stockChart"}
+          options={mockOptions}
         />
       }
     </div>
   );
-}
+};
 
-export default ChartDesign
+export default ChartDesign;
